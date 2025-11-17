@@ -1,0 +1,315 @@
+body{
+
+}
+.profile-section {
+    position: relative;
+    width: 100%;
+    height: 15rem; /* full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25rem;
+    background: url('image.avif') center/cover no-repeat;
+    filter: brightness(40%); /* darken background for text visibility */
+    z-index: 1;
+}
+
+.profile-content {
+    position: relative;
+    z-index: 2;
+}
+
+.profile-pic {
+    /* width: 8rem; */
+    height:10rem;
+    border-radius: 50%;
+    border: 4px solid #fff; /* optional border */
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.name {
+    font-size:1.5rem;
+    margin: 0;
+}
+
+.role {
+    font-size: 1rem;
+    margin: 3px 0 0 0;
+    font-weight: 200;
+}
+
+
+    /* slidding videos section  */
+    .slides{
+        height:20rem;
+        width:100%;
+        background: #706868;
+    }
+    /*  here is the video centre section  */
+    .mid-section {
+        width: 100%;
+        height:32rem;
+        padding: 10px 3%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        place-items: center;
+        /* border-radius: 5%; */
+        margin: 0;
+        gap:2rem;
+        align-items: center;
+        /* background: linear-gradient(135deg, #91828d, #b9b2b8); */
+        box-sizing: border-box;
+    }
+
+    .video-container {
+        width: 80%;
+        height:14rem;
+        overflow: hidden;
+        border-radius: 20px;
+        /* margin-left: 20px; */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .video-container video {
+        width: 100%;
+        height:14rem;
+        display: block;
+        border-radius: 20px;
+    }
+
+    .video-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(0,123,255,0.4);
+    }
+
+/* slides */
+.sliding-section {
+        width: 100%;
+        height:15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin: 40px 0;
+    }
+
+    .video-wrapper {
+        width: 80%;
+        overflow: hidden;
+    }
+
+    .video-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.5s ease;
+    }
+
+    .video-track video {
+        width: 30%;     /* 3 videos visible */
+        height:15rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        width: calc(10 * 33.33%); /* 10 videos * width */
+        animation: slide 20s linear infinite;
+    }
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-99%); } /* half the total width */
+    }
+    /* extra */
+    /* Background Blur when modal active */
+.blur-active {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* Modal Style */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #111;
+    padding: 10px;
+    border-radius: 12px;
+    width: 70%;
+    max-width: 800px;
+    animation: popIn 0.3s ease;
+}
+
+.modal-content video {
+    width: 100%;
+    height: 30rem;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Popup animation */
+@keyframes popIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+    /* Responsive */
+    @media (max-width: 768px){
+        .top-section {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        .left-part, .right-part {
+            width: 100%;
+        }
+        .right-part img {
+            margin-bottom: 20px;
+        }
+        .video-container {
+            width: 90%;
+        }
+    }
+    .portfolio-footer {
+    background-color: #111;
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #ff4c60; /* accent color */
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-links h3,
+.footer-social h3,
+.footer-contact h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ff4c60;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ff4c60;
+}
+
+.footer-social .social-icons a {
+    display: flex;
+    margin-right: 10px;
+    gap:20px;
+    justify-content: center;
+    color: #aaa;
+    transition: transform 0.3s;
+}
+
+.footer-social .social-icons a img {
+    width: 25px;
+    height: 25px;
+}
+.footer-social .social-icons {
+    display:flex;
+    align-items: flex-start;
+    flex-direction: column;  
+    gap: 10px;                
+   
+}
+
+.footer-social .social-icons a img {
+    width: 30px; 
+    height: 30px;
+}
+
+
+
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #777;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-logo, .footer-links, .footer-social, .footer-contact {
+        text-align: center;
+    }
+}
