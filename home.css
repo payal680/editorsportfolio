@@ -33,7 +33,7 @@ body{
 .profile-pic {
     /* width: 8rem; */
     height:10rem;
-    border-radius: 50%;
+    border-radius: 5%;
     border: 4px solid #fff; /* optional border */
     object-fit: cover;
     margin-bottom: 10px;
@@ -312,4 +312,5 @@ body{
     .footer-logo, .footer-links, .footer-social, .footer-contact {
         text-align: center;
     }
+
 }
